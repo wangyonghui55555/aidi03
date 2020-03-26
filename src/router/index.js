@@ -3,52 +3,54 @@ import VueRouter from 'vue-router'
 import Home from '../views/home.vue'
 import FreeClinic from '../views/freeClinic.vue'
 import Inquiry from '../views/inquiry.vue'
-import DoctorDetails from '../views/doctorDetails.vue'
+//import DoctorDetails from '../views/doctorDetails.vue'
 import OrderDetails from '../views/orderDetails.vue'
 import Pay from '../views/pay.vue'
 import OrderDetailsPay from '../views/orderDetailsPay.vue'
-import Description from '../views/description.vue'
+//import Description from '../views/description.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: '主页',
+    name: 'home',
     component: Home
   },
   {
     path: '/freeClinic',
-    name: '义诊专区',
+    name: 'freeClinic',
     component: FreeClinic
   },
   {
     path: '/inquiry',
-    name: '普通问诊',
+    name: 'inquiry',
     component: Inquiry
   },
   {
     path: '/doctorDetails',
-    name: '医生详情',
-    component:DoctorDetails
+    name: 'doctorDetails',
+    //component:DoctorDetails
+      component: () => import( '../views/doctorDetails.vue')
   },
   {
     path: '/description',
-    name: '病情描述',
-    component:Description
+    name: 'description',
+    //component:Description
+      component: () => import('../views/description.vue')
     },
     {
     path:'/orderDetails',
-    name:'订单详情',
+    name:'orderDetails',
     component:OrderDetails
     },
     {
       path:'/pay',
-      name:'支付方式',
+      name:'pay',
       component:Pay
     },
     {
       path:'/orderDetailsPay',
-      name:'订单详情已付',
+      name:'orderDetailsPay',
       component:OrderDetailsPay
     },
   {

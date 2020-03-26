@@ -135,6 +135,7 @@ textarea::-webkit-input-placeholder {
         color: #636363!important;
         line-height: 1.6!important;
     }
+
     .el-popper[x-placement^=bottom] .popper__arrow::after{
         border-bottom-color:#ffd28e5c!important;
     }

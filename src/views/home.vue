@@ -7,7 +7,6 @@
           <div class="div_column"  v-for="(item,index) in list" :key="index" >
           <div class="head_1">
             <img class="img_size" :src="item.doctor.imageUrl"/>
-            <!--<span class="span_active">剩余5次</span>-->
           </div>
             <span class="span_active">剩余{{item.normalInquiryConfig.discount}}次</span>
           <div class="span_text">
@@ -15,27 +14,7 @@
             <span class="text_color_2">￥{{item.normalInquiryConfig.price}}元</span>
           </div>
         </div>
-          <!--<div class="div_column">-->
-            <!--<div class="head_1">-->
-              <!--<img class="img_size" :src="item.doctor.imageUrl"/>-->
-              <!--<span class="span_active">剩余5次</span>-->
-            <!--</div>-->
-            <!--<div class="span_text">-->
-              <!--<span class="text_color_1 text-decoration">￥40元</span>-->
-              <!--<span class="text_color_2">￥40元</span>-->
-            <!--</div>-->
-          <!--</div>-->
-          <!--<div class="div_column">-->
-            <!--<div class="head_1">-->
-              <!--<img class="img_size" src="https://img.yzcdn.cn/vant/cat.jpeg"/>-->
-              <!--<span class="span_active">剩余5次</span>-->
-            <!--</div>-->
-            <!--<div class="span_text">-->
-              <!--<span class="text_color_1 text-decoration">￥40元</span>-->
-              <!--<span class="text_color_2">￥40元</span>-->
-            <!--</div>-->
-          <!--</div>-->
-          <div class="div_column">
+          <div class="div_column" @click="more">
             <div class="head_2 bg_color">
               更多<br/>
               医生
@@ -46,7 +25,7 @@
     <div class="div_2">
       <div class="div_1_title flex_between">
         <span>普通问诊</span>
-        <span class="text_color_1 font_normal">更多></span>
+        <span class="text_color_1 font_normal" @click="more2">更多></span>
       </div>
       <div v-for="(item,index) in list" :key="index" class="div_list">
         <div class="div_list_row">
@@ -102,7 +81,12 @@
             });
         },
         methods: {
-
+            more(){
+                this.$router.push({name: 'freeClinic'});
+            },
+            more2(){
+                this.$router.push({name: 'inquiry'});
+            }
         }
     }
 </script>

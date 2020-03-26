@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="input_search">
-            <van-search v-model="value" placeholder="搜索医院、医生、科室、疾病" />
+            <van-search v-model="text" placeholder="搜索医院、医生、科室、疾病" />
         </div>
         <van-dropdown-menu  class="van_menu_1">
             <van-dropdown-item class="text_fz fz_size_14" v-model="value1" :options="option1" />
@@ -25,15 +25,15 @@
                             <span class="text_name fz_size text_ml">副主任医师</span>
                             <span class="text_border fz_size text_ml">三甲</span>
                         </div>
-                        <div class="flex_3">
+                        <div class="flex_3 text_1">
                             <span class="text_name fz_size_14">中山大学附属肿瘤医院</span>
                             <span class="text_ml fz_size_14">肿瘤内科</span>
-                        </div>
-                        <div class="flex_3">
                             <div class="fz_size_14 text_color">接诊率 100%  好评率100%  问诊量 7</div>
+                        </div>
+                        <div class="flex_3 mp_10">
                             <div class="fz_size_14 text_color fz_line">擅长：消化道肿瘤（食道癌、胃癌、肠癌、胰腺癌、肝癌）的内科治疗及临床研究。</div>
                         </div>
-                        <div class="flex_3 flex_space-between mt_10">
+                        <div class="flex_3 flex_space-between mt_10 mp_10">
                             <span class="text_color_2 fz_size_14">￥120起<span class="text_color_3 fz_size_14 ml_9 fz_w">可咨询</span></span>
                             <span class="text_color_3 fz_size_14 fz_w">平均回复：1小时内</span>
                         </div>
@@ -49,6 +49,7 @@
         name: "inquiry",
         data() {
             return {
+                text :'',
                 value1: 0,
                 value2: 'a',
                 value3: 'b',
@@ -78,6 +79,9 @@
                 finished: false,
                 diseaseName:[{id:1,name:'鼻咽癌'},{id:2,name:'鼻癌'},{id:3,name:'鼻癌'},{id:4,name:'鼻癌'},{id:3,name:'鼻癌'},{id:4,name:'鼻癌'},{id:3,name:'鼻癌'},{id:4,name:'鼻癌'}],
             }
+        },
+        mounted(){
+            this.onLoad();
         },
         methods: {
             onLoad() {
@@ -182,6 +186,9 @@
     }
     .text_ml{
         margin-left: 10px;
+    }
+    .text_1{
+        line-height: 20px;
     }
     .text_border{
         height: 19px;

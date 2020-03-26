@@ -8,7 +8,7 @@
                         <span>副主任医师</span>
                         <span class="ml_8">肿瘤内科</span>
                     </div>
-                    <div class="fz_size_14 text_color">中山大学附属肿瘤医院</div>
+                    <div class="fz_size_14 text_color">中山大学附属肿瘤医院<span class="text_border fz_size ml_10">三甲</span></div>
                 </div>
             </div>
             <div class="img_t_1">
@@ -85,14 +85,14 @@
                     <div class="text_color_6 fz_size_13">· 24小时内不限次提问</div>
                 <div class="div_flex_3"  slot="reference">
                     <van-image width="30" height="30" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-                    <span class="fz_w fz_size_16 text_color_4 mp_10">暂未开通</span>
+                    <span class="fz_w fz_size_16 text_color_4 mp_10">视频问诊</span>
                     <span class="mp_5 fz_size_14 text_color_4">暂未开通</span>
                 </div>
                 </el-popover>
             </div>
         </div>
         <div class="div_butt_1">
-            <van-button  type="primary" size="large">保存</van-button>
+            <van-button  type="primary" size="large">普通问诊  ￥50/次</van-button>
         </div>
     </div>
 </template>
@@ -132,7 +132,7 @@
 .div_flex{
     display: flex;
     flex-direction: column;
-    height: 265px;
+    /*height: 265px;*/
     background: #ebedf0;
 }
 .flex_row_1{
@@ -178,12 +178,15 @@
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0);
     margin-top: 11px;
+    background: #FFF;
+    padding-bottom: 200px;
 }
 .div_butt_1{
     position: fixed;
     left: 18px;
     right: 18px;
     bottom: 16px;
+    z-index: 9999!important;
 }
 .text_al{
     display: flex;
@@ -197,53 +200,66 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 109px;
-    height: 134px;
+    height: 132px;
     line-height: 20px;
     border-radius: 4px;
     background-color: rgba(255, 251, 247, 1);
     text-align: center;
     border: 1px solid rgba(237, 133, 6, 1);
     background-color: #FFFBF7;
+    padding: 0px 22px;
 }
 .div_flex_3{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 109px;
-    height: 134px;
+    height: 132px;
     line-height: 20px;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0);
     text-align: center;
     border: 1px solid #ebedf0;
+    margin-left: 5px;
+    padding: 0px 22px;
+}
+.text_border{
+    height: 19px;
+    line-height: 15px;
+    border-radius: 11px;
+    color: rgba(237, 133, 6, 1);
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding: 4px;
+    text-align: center;
+    font-family: Arial;
+    border: 1px solid rgba(237, 133, 6, 1);
 }
 </style>
 <style>
-    .el-popover{
-        border: 1px solid rgba(237, 133, 6, 1)!important;
-        left: 17px!important;
-        right: 17px!important;
-        height: 128px!important;
-    }
-    .el-popper[x-placement^=bottom] .popper__arrow{
-        border-bottom-color: rgba(237, 133, 6, 1)!important;
-    }
-    .van-button--large{
-        height: 40px!important;
-        line-height: 40px!important;
-        border-radius: 62px!important;
-        background:#ED8506!important;
-        border: none!important;
-    }
-    .van-button{
-        font-size: 14px!important;
-    }
-    .el-popover__title{
-        color: #303133!important;
-        font-size: 16px!important;
-        font-weight: bold!important;
-        margin-bottom: 10px!important;
-    }
+.el-popover{
+    border: 1px solid rgba(237, 133, 6, 1)!important;
+    left: 17px!important;
+    right: 17px!important;
+    height: 90px!important;
+}
+.el-popper[x-placement^=bottom] .popper__arrow{
+    border-bottom-color: rgba(237, 133, 6, 1)!important;
+}
+.van-button--large{
+    height: 40px!important;
+    line-height: 40px!important;
+    border-radius: 62px!important;
+    background:#ED8506!important;
+    border: none!important;
+}
+.van-button{
+    font-size: 14px!important;
+}
+.el-popover__title{
+    color: #303133!important;
+    font-size: 16px!important;
+    font-weight: bold!important;
+    margin-bottom: 10px!important;
+}
 </style>
