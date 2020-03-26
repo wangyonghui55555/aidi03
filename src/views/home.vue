@@ -68,13 +68,12 @@
         }
       },
         mounted () {
-            let url = 'https://bird.ioliu.cn/v2?url=https://int.aidi-sz.com/api/doctor/normalon';
-            this.$axios.get(url).then(response=>{
+            this.$axios.get('/api/api/doctor/normalon').then(response=>{
                 if( response.data.successful ){
-                 var data=response.data.value;
-                   for (let i=0;i<data.length;i++){
-                       this.list.push(data[i]);
-                   }
+                    var data=response.data.value;
+                    for (let i=0;i<data.length;i++){
+                        this.list.push(data[i]);
+                    }
                 }
             }) .catch(err => {
                 console.log(err);
