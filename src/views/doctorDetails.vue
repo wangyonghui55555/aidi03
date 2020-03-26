@@ -51,22 +51,24 @@
                     placement="bottom"
                     title="使用文字、图片与医生线上沟通"
                     width="100%"
+                    popper-class="do"
                     trigger="click">
                     <div class="text_color_6 fz_size_13">· 通过文字、图片咨询医生</div>
                     <div class="text_color_6 fz_size_13">· 24小时内不限次提问</div>
-                    <div class="div_flex_1" slot="reference">
+                    <div class="div_flex_1" slot="reference" @click="isShwo"  :class="isDisplay? 'div_flex_1' : 'div_flex_3'">
                         <van-image width="30" height="30" src="https://img.yzcdn.cn/vant/cat.jpeg" />
                         <span class="fz_w fz_size_16 text_color_3 mp_10">普通问诊</span>
                         <span class="mp_5 fz_size_14 text_color_2">￥50/次</span>
                     </div>
                     <div class="div_span_jb" slot="reference">
-                        <span class="span_jb"></span>
+                        <span class="span_jb" v-show="isDisplay"></span>
                     </div>
                 </el-popover>
                 <el-popover
                     placement="bottom"
                     title="使用文字、图片与医生线上沟通"
                     width="100%"
+                    disabled="false"
                     trigger="click">
                     <div class="text_color_6 fz_size_13">· 通过文字、图片咨询医生</div>
                     <div class="text_color_6 fz_size_13">· 24小时内不限次提问</div>
@@ -80,6 +82,7 @@
                     placement="bottom"
                     title="使用文字、图片与医生线上沟通"
                     width="100%"
+                    disabled="false"
                     trigger="click">
                     <div class="text_color_6 fz_size_13">· 通过文字、图片咨询医生</div>
                     <div class="text_color_6 fz_size_13">· 24小时内不限次提问</div>
@@ -102,7 +105,17 @@
         name: "doctorDetails",
         data(){
             return {
-                visible: true
+                visible: true,
+                isDisplay:false,
+            }
+        },
+        methods:{
+            isShwo(){
+               if(this.isDisplay){
+                   this.isDisplay=false;
+               }else {
+                   this.isDisplay=true;
+               }
             }
         }
     }
@@ -207,7 +220,7 @@
     text-align: center;
     border: 1px solid rgba(237, 133, 6, 1);
     background-color: #FFFBF7;
-    padding: 0px 22px;
+    padding: 0px 20px;
 }
 .div_flex_3{
     display: flex;
@@ -221,7 +234,7 @@
     text-align: center;
     border: 1px solid #ebedf0;
     margin-left: 5px;
-    padding: 0px 22px;
+    padding: 0px 20px;
 }
 .text_border{
     height: 19px;
